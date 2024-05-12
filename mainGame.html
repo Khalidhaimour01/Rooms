@@ -12,22 +12,18 @@
 </head>
 <body>
     <div class="intro" id="introCall">
-        <p class="introText">
-        Hello, Welcome to rooms
-        </p>
-        <p class="introText">
-            Please enter your name below  
-        </p>
+        <p class="introText">Hello, Welcome to rooms <br> Please enter your name below  </p>
         <input type="text" name="name" id="name" placeholder="Name:">
         <button class="fa-solid fa-x" id="nameButton"></button>
-        <audio src="typing.mp3" preload="auto" autoplay="autoplay"></audio>
+        <audio src="typing.mp3" preload="auto" autoplay="autoplay" id="typingSounds"></audio>
     </div>
     <div class="levelOne" id="oneCall">
-        <p class="levelOneText" id="levelOneName">Hi </p>
-        <p class="levelOneText">Welcome to the first room</p>
-        <p class="levelOneText">'Please Unlock' Me, We Need to Start Testing</p>
+        <p class="levelOneText" id="levelOneNameInput"></p>
+        <p id="hint">Use your manners</p>
+        <p id="wrong">Wrong!</p>
         <input type="text" name="pass" id="pass" placeholder="Unlock Me">
         <button id="levelOneButton" class="fa-solid fa-lock"></button>
+        <button class="fa-solid fa-unlock" id="levelTwoUnlock"></button>
     </div>
   <script src="gameLogic.js"></script>  
 </body>

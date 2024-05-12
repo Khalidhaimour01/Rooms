@@ -43,7 +43,16 @@ input {
     height: 3em;
     font-size: 1.2em;
     text-align: center;
+    opacity: 0.4;
 }
+
+
+input:focus {
+    outline: none;
+    animation: designFade 1s forwards;
+}
+
+
 
 #name {
     font-family: Arial, Helvetica, sans-serif;
@@ -75,14 +84,17 @@ input {
     text-align: center;
     display: none;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  
 }
 
 .levelOneText {
     font-size: 3em;
     font-family: 'Jersey 25 Charted';
+    margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 
@@ -90,7 +102,18 @@ input {
     font-family: Arial, Helvetica, sans-serif;    
     height: 30px;
     width: 200px;
-    margin-top: 100px;
+}
+
+#levelTwoUnlock {
+    position: absolute;
+    font-size: 2.2em;
+    color: red;
+    background-color: transparent;
+    border: none;
+    top: 93%;
+    left: 70%;
+    transform: translate(-50%, -50%);  
+    display: none;
 }
 
 #levelOneButton {
@@ -99,8 +122,8 @@ input {
     color: white;
     background-color: transparent;
     border: none;
-    top: 97%;
-    left: 68%;
+    top: 93%;
+    left: 70%;
     transform: translate(-50%, -50%);
 }
 
@@ -108,9 +131,30 @@ input {
     color: red
 }
 
+/* Hint */
 
+#hint {
+    color: yellow;
+    font-size: 2em;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Jersey 25 Charted";
+    display: none;
+}
+/* Wrong answer */
 
-
+#wrong {
+    color: red;
+    font-size: 2em;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Jersey 25 Charted";
+    display: None;
+}
 
 
 /* Game Animations */
@@ -133,6 +177,15 @@ input {
     100% { opacity: 1; }
   }
   
+  @keyframes designFade {
+    40% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+
+
+
+
+
 
   .typeAnimation {
     overflow: hidden;
