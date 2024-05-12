@@ -1,0 +1,148 @@
+
+
+.jersey-25-charted-regular {
+  font-family: "Jersey 25 Charted", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Body */
+
+
+body {
+    background-color: black;
+}
+
+/* Intro */
+
+
+.intro {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.introText {
+    overflow: hidden;  /* Prevents Text Shown Before Animation */
+    font-size: 3em;
+    color: white;
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    white-space: nowrap;    /* Keeps text on one line */
+    border-right: .15em solid orange; /* Type Cursor */
+    margin: 0 auto;
+    font-family: 'Jersey 25 Charted';
+}
+
+input {
+    width: 30em;
+    height: 3em;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#name {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2em;
+}
+
+#nameButton {
+    color: white;
+    font-size: 4em;
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+#nameButton:hover {
+    color:red
+}
+
+
+/* Level One */
+
+.levelOne {
+    color: white;
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.levelOneText {
+    font-size: 3em;
+    font-family: 'Jersey 25 Charted';
+}
+
+
+.levelOne input {
+    font-family: Arial, Helvetica, sans-serif;    
+    height: 30px;
+    width: 200px;
+    margin-top: 100px;
+}
+
+#levelOneButton {
+    position: absolute;
+    font-size: 2.2em;
+    color: white;
+    background-color: transparent;
+    border: none;
+    top: 97%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+}
+
+#levelOneButton:hover {
+    color: red
+}
+
+
+
+
+
+
+/* Game Animations */
+
+    /* The Typing Animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  /* Fade-In Animation */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+
+  .typeAnimation {
+    overflow: hidden;
+    white-space: nowrap;    
+    border-right: .15em solid orange;
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;    
+}
+
+.fadeIn {
+    animation: fadeIn 5s;
+}

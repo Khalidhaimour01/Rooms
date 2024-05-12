@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gameStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5434231ae2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="intro" id="introCall">
+        <p class="introText">
+        Hello, Welcome to rooms
+        </p>
+        <p class="introText">
+            Please enter your name below  
+        </p>
+        <input type="text" name="name" id="name" placeholder="Name:">
+        <button class="fa-solid fa-x" id="nameButton"></button>
+        <audio src="typing.mp3" preload="auto" autoplay="autoplay"></audio>
+    </div>
+    <div class="levelOne" id="oneCall">
+        <p class="levelOneText" id="levelOneName">Hi </p>
+        <p class="levelOneText">Welcome to the first room</p>
+        <p class="levelOneText">'Please Unlock' Me, We Need to Start Testing</p>
+        <input type="text" name="pass" id="pass" placeholder="Unlock Me">
+        <button id="levelOneButton" class="fa-solid fa-lock"></button>
+    </div>
+  <script src="gameLogic.js"></script>  
+</body>
+</html>
