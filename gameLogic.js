@@ -1,14 +1,36 @@
+// Imports
+
+
+
 // Game Logic
 
-
+// Player object for saves
 
 const player = {
     playerName: "",
     level: 0
 };
 
-// All pages removed must be delcared as global vars do this in a serpeerate module
 
+// Tutorial
+
+function tutorial() {
+    const tutorials = document.getElementById('tutorials');
+    const tutorials2 = document.getElementById('tutorials2');
+    tutorials.style.display = 'none';
+    tutorials2.style.display = 'block'; 
+    document.getElementById('typingSounds').play();
+};
+
+function tutorial2() {
+    const tutorials2 = document.getElementById('tutorials2');
+    const intro = document.getElementById('introCall');
+    tutorials2.style.display = 'none';
+    intro.style.display = 'block'
+};
+
+
+// Name intake
 function infoIntake() { 
     const name = document.getElementById('name').value;
     const level1Text = document.getElementById('levelOneNameInput');
@@ -24,29 +46,41 @@ function infoIntake() {
     document.getElementById('typingSounds').play();
 };
 
-
+// Level one
 function levelOne() {
     const password = document.getElementById('pass').value;
+    const trimmedPass = password.trim();
     const manners = document.getElementById('hint');
     const wrong = document.getElementById('wrong');
     const nextLevel = document.getElementById('oneCall');
     // Hints and wrong answer
-    if (password.toLowerCase() === "unlock") {
+    if (trimmedPass.toLowerCase() === "unlock") {
         manners.style.display = "block";
         wrong.style.display = 'none';
-    } else if (password.toLowerCase() === "please unlock") {
+    } else if (trimmedPass.toLowerCase() === "please unlock") {
         nextLevel.style.display = 'none';
-        player.level++
+        player.level++;
         console.log(player)
+    } else if (trimmedPass.toLowerCase() === 'unlock please') {
+        manners.innerHTML = `Pay attention, order is important`;
+        manners.style.display = 'block';
+        wrong.style.display = 'none';
     } else {
-        manners.style.display = "none";
+        manners.style.display = 'none';
         wrong.style.display = 'block';
-    }
+    };
+    
+   
 };
 
 
-document.getElementById('levelOneButton').addEventListener('click', levelOne)
-document.getElementById('nameButton').addEventListener('click', infoIntake);
-   
+function levelTwo() {
+    
+};
 
+
+document.getElementById('nextButton').addEventListener('click', tutorial);
+document.getElementById('nextButton2').addEventListener('click', tutorial2);
+document.getElementById('nameButton').addEventListener('click', infoIntake);
+document.getElementById('levelOneButton').addEventListener('click', levelOne);
 

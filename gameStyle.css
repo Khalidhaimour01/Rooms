@@ -7,6 +7,27 @@
 }
 
 
+/* Heart Containers */
+header {
+    display: flex;
+    justify-content: flex-end; /* Align heart containers to the right */
+    align-items: center;
+    height: 100px; /* Adjust height as needed */
+}
+
+.heart-container {
+    margin: 0 10px;
+    margin-right: 40px;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000;
+    clip-path: polygon(50% 0%, 0% 35%, 21% 60%, 50% 100%, 79% 60%, 100% 35%);
+    transition: all 0.5s ease-in-out;
+}
+
 /* Body */
 
 
@@ -14,11 +35,90 @@ body {
     background-color: black;
 }
 
+
+/* Tutorial */
+
+.tutorial {
+    font-family: 'Jersey 25 Charted';
+    font-size: 3em;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+}
+
+.tutorial p {
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid orange;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#nextButton {
+    color: white;
+    font-size: 2em;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+}
+
+#nextButton:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.tutorial2 {
+    font-family: 'Jersey 25 Charted';
+    font-size: 3em;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    display: none;
+}
+
+.tutorial2 p {
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid orange;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#nextButton2 {
+    color: white;
+    font-size: 2em;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+}
+
+#nextButton2:hover {
+    color: red;
+    cursor: pointer;
+}
+
+
 /* Intro */
-
-
 .intro {
-    display: block;
+    display: none;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -49,7 +149,7 @@ input {
 
 input:focus {
     outline: none;
-    animation: designFade 1s forwards;
+    animation: designFade 0.5s forwards;
 }
 
 
@@ -155,6 +255,22 @@ input:focus {
     font-family: "Jersey 25 Charted";
     display: None;
 }
+
+
+#reverse {
+    color: yellow;
+    font-size: 2em;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Jersey 25 Charted";
+    display: none;
+}
+
+
+
+
 
 
 /* Game Animations */

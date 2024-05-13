@@ -10,9 +10,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5434231ae2.js" crossorigin="anonymous"></script>
 </head>
+<header>
+    <div class="heart-container" id="heart1">
+        <div class="heart"></div>
+    </div>
+    <div class="heart-container" id="heart2">
+        <div class="heart"></div>
+    </div>
+    <div class="heart-container" id="heart3">
+        <div class="heart"></div>
+    </div>
+    <script src="script.js"></script>
+</header>
 <body>
-    <div class="intro" id="introCall">
-        <p class="introText">Hello, Welcome to rooms <br> Please enter your name below  </p>
+    
+    <div class="tutorial" id="tutorials">
+        <p>Hello, Welcome to rooms <br> This is a puzzle game <br>
+             each level will get progressively harder <br> Pay attention to the wording <br>
+            think outside of the box, hints will be minimal </p>
+            <button class="fa-solid fa-arrow-right" id="nextButton"></button>
+     </div>
+     <div class="tutorial2" id="tutorials2">
+        <p>The three hearts in the corner are your lives <br>
+        nothing in this game offers any extra lives <br>
+    lost all three? we have to send you back to the first test</p>
+    <button class="fa-solid fa-arrow-right" id="nextButton2"></button>
+    </div>
+     <div class="intro" id="introCall">
+        <p class="introText"> Please enter your name below  </p>
         <input type="text" name="name" id="name" placeholder="Name:">
         <button class="fa-solid fa-x" id="nameButton"></button>
         <audio src="typing.mp3" preload="auto" autoplay="autoplay" id="typingSounds"></audio>
@@ -25,6 +50,10 @@
         <button id="levelOneButton" class="fa-solid fa-lock"></button>
         <button class="fa-solid fa-unlock" id="levelTwoUnlock"></button>
     </div>
-  <script src="gameLogic.js"></script>  
+    <div class="leveltwo" id="twoCall">
+        <p class="levelTwoText"></p>
+        
+    </div>
+    <script src="gameLogic.js"></script>  
 </body>
 </html>
