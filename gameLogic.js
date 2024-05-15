@@ -18,11 +18,13 @@ function loseheart() {
     } else if (heartsRemaining === 0) {
         heartThree.classList.add('empty-heart')
     };
-
+    
 restart();
+
 };
 
 // Restart Function
+const restartPage = document.getElementById('restartPage')
 
 function restart() {
     const blockElements = document.querySelectorAll('[style*="display: block"]');
@@ -30,7 +32,11 @@ function restart() {
         blockElements.forEach(element => {
             element.style.display = 'none';
         });
+        restartPage.style.display = 'block';
+        heartsRemaining = 3;
+        player.level = 0;
     };
+
 };
 
 
@@ -58,6 +64,7 @@ function tutorial2() {
     const intro = document.getElementById('introCall');
     tutorials2.style.display = 'none';
     intro.style.display = 'block'
+    restartPage.style.display = 'none';
 };
 
 
@@ -75,6 +82,7 @@ function infoIntake() {
     level1Text.innerHTML = `Hi ${name} <br>Welcome to the first room <br>'Please Unlock' Me, We Need to Start Testing`;
     level1Text.classList.add('typeAnimation');
     document.getElementById('typingSounds').play();
+    restartPage.style.display = 'none';
 };
 
 // Level one
@@ -91,7 +99,6 @@ function levelOne() {
     } else if (trimmedPass.toLowerCase() === "please unlock") {
         nextLevel.style.display = 'none';
         player.level++;
-        console.log(player)
     } else if (trimmedPass.toLowerCase() === 'unlock please') {
         manners.innerHTML = `Pay attention, order is important`;
         manners.style.display = 'block';
@@ -116,5 +123,5 @@ document.getElementById('nextButton').addEventListener('click', tutorial);
 document.getElementById('nextButton2').addEventListener('click', tutorial2);
 document.getElementById('nameButton').addEventListener('click', infoIntake);
 document.getElementById('levelOneButton').addEventListener('click', levelOne);
-
-console.log(heartsRemaining)
+document.getElementById('Quit').addEventListener('click', tutorial2);
+document.getElementById('restartYes').addEventListener('click', infoIntake);
