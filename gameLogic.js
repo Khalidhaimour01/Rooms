@@ -1,8 +1,38 @@
-// Imports
-
-
 
 // Game Logic
+
+
+// Lives
+
+
+let heartsRemaining = 3;
+let heartOne = document.getElementById('heart1');
+let heartTwo = document.getElementById('heart2');
+let heartThree = document.getElementById('heart3');
+
+function loseheart() {    
+    if (heartsRemaining === 2) {
+        heartOne.classList.add('empty-heart')
+    } else if (heartsRemaining === 1) {
+        heartTwo.classList.add('empty-heart')
+    } else if (heartsRemaining === 0) {
+        heartThree.classList.add('empty-heart')
+    };
+
+restart();
+};
+
+// Restart Function
+
+function restart() {
+    const blockElements = document.querySelectorAll('[style*="display: block"]');
+    if (heartsRemaining === 0) {
+        blockElements.forEach(element => {
+            element.style.display = 'none';
+        });
+    };
+};
+
 
 // Player object for saves
 
@@ -20,6 +50,7 @@ function tutorial() {
     tutorials.style.display = 'none';
     tutorials2.style.display = 'block'; 
     document.getElementById('typingSounds').play();
+    
 };
 
 function tutorial2() {
@@ -68,6 +99,8 @@ function levelOne() {
     } else {
         manners.style.display = 'none';
         wrong.style.display = 'block';
+        heartsRemaining--
+        loseheart();
     };
     
    
@@ -79,8 +112,9 @@ function levelTwo() {
 };
 
 
-document.getElementById('nextButton').addEventListener('click', tutorial);
+document.getElementById('nextButton').addEventListener('click', tutorial); 
 document.getElementById('nextButton2').addEventListener('click', tutorial2);
 document.getElementById('nameButton').addEventListener('click', infoIntake);
 document.getElementById('levelOneButton').addEventListener('click', levelOne);
 
+console.log(heartsRemaining)
